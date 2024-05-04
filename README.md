@@ -1,6 +1,9 @@
 # windows_appcommand
 
-https://pub.dev/packages/windows_appcommand
+[![pub version][pub-image]][pub-url]
+
+[pub-image]: https://img.shields.io/pub/v/windows_appcommand.svg
+[pub-url]: https://pub.dev/packages/windows_appcommand
 
 A Flutter plugin that adds WM_APPCOMMAND message functionality for windows.
 
