@@ -1,5 +1,7 @@
 # windows_appcommand
 
+https://pub.dev/packages/windows_appcommand
+
 A Flutter plugin that adds WM_APPCOMMAND message functionality for windows.
 
 https://learn.microsoft.com/en-us/windows/win32/inputdev/wm-appcommand?redirectedfrom=MSDN

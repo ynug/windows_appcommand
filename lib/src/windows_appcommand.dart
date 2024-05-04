@@ -1,8 +1,6 @@
-
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:windows_appcommand/src/app_command.dart';
-
 
 const kBassBoost = 'bassBoost';
 const kBassDown = 'bassDown';
@@ -57,8 +55,6 @@ const kVolumeDown = 'volumeDown';
 const kVolumeMute = 'volumeMute';
 const kVolumeUp = 'volumeUp';
 
-
-
 class WindowsAppcommand {
   WindowsAppcommand._() {
     _channel.setMethodCallHandler(_methodCallHandler);
@@ -69,8 +65,7 @@ class WindowsAppcommand {
 
   final MethodChannel _channel = const MethodChannel('windows_appcommand');
 
-  final ObserverList<AppCommand> _listeners =
-  ObserverList<AppCommand>();
+  final ObserverList<AppCommand> _listeners = ObserverList<AppCommand>();
 
   Future<void> _methodCallHandler(MethodCall call) async {
     for (final AppCommand listener in listeners) {
@@ -96,7 +91,8 @@ class WindowsAppcommand {
         kCopy: listener.onCopy,
         kCorrectionList: listener.onCorrectionList,
         kCut: listener.onCut,
-        kDictateOrCommandControlToggle: listener.onDictateOrCommandControlToggle,
+        kDictateOrCommandControlToggle:
+            listener.onDictateOrCommandControlToggle,
         kFind: listener.onFind,
         kForwardMail: listener.onForwardMail,
         kHelp: listener.onHelp,
@@ -140,8 +136,7 @@ class WindowsAppcommand {
   }
 
   List<AppCommand> get listeners {
-    final List<AppCommand> localListeners =
-    List<AppCommand>.from(_listeners);
+    final List<AppCommand> localListeners = List<AppCommand>.from(_listeners);
     return localListeners;
   }
 
@@ -152,7 +147,6 @@ class WindowsAppcommand {
   void removeListener(AppCommand listener) {
     _listeners.remove(listener);
   }
-
 }
 
 final windowsAppCommand = WindowsAppcommand.instance;

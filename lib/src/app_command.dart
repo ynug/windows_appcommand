@@ -107,52 +107,52 @@ abstract mixin class AppCommand {
 
   /// Emitted when the APPCOMMAND_MICROPHONE_VOLUME_MUTE.
   void onMicrophoneVolumeMute() {}
-  
+
   /// Emitted when the APPCOMMAND_MICROPHONE_VOLUME_UP.
   void onMicrophoneVolumeUp() {}
-  
+
   /// Emitted when the APPCOMMAND_NEW.
   void onNew() {}
-  
+
   /// Emitted when the APPCOMMAND_OPEN.
   void onOpen() {}
-  
+
   /// Emitted when the APPCOMMAND_PASTE.
   void onPaste() {}
-  
+
   /// Emitted when the APPCOMMAND_PRINT.
   void onPrint() {}
-  
+
   /// Emitted when the APPCOMMAND_REDO.
   void onRedo() {}
-  
+
   /// Emitted when the APPCOMMAND_REPLY_TO_MAIL.
   void onReplayToMail() {}
-  
+
   /// Emitted when the APPCOMMAND_SAVE.
   void onSave() {}
-  
+
   /// Emitted when the APPCOMMAND_SEND_MAIL.
   void onSendMail() {}
-  
+
   /// Emitted when the APPCOMMAND_SPELL_CHECK.
   void onSpellCheck() {}
-  
+
   /// Emitted when the APPCOMMAND_TREBLE_DOWN.
   void onTrebleDown() {}
-  
+
   /// Emitted when the APPCOMMAND_TREBLE_UP.
   void onTrebleUp() {}
-  
+
   /// Emitted when the APPCOMMAND_UNDO.
   void onUndo() {}
-  
+
   /// Emitted when the APPCOMMAND_VOLUME_DOWN.
   void onVolumeDown() {}
-  
+
   /// Emitted when the APPCOMMAND_VOLUME_MUTE.
   void onVolumeMute() {}
-  
+
   /// Emitted when the APPCOMMAND_VOLUME_UP.
   void onVolumeUp() {}
 }
