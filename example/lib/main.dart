@@ -13,6 +13,8 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> with AppCommand {
+  var list = [];
+
   @override
   void initState() {
     super.initState();
@@ -32,8 +34,25 @@ class _MyAppState extends State<MyApp> with AppCommand {
         appBar: AppBar(
           title: const Text('windows_appcommand Plugin example app'),
         ),
-        body: const Center(
-          child: Text('Running on: Test\n'),
+        body:  ListView.separated(
+          itemBuilder: (BuildContext context, int index) {
+            return ListTile(
+              title: Text(
+                list[index],
+                style: const TextStyle(
+                    color:Colors.black,
+                    // fontSize: 18.0
+                ),
+              ),
+            );
+          },
+          separatorBuilder: (BuildContext context, int index) {
+            return Container(
+              height: 1,
+              color: Colors.grey,
+            );
+          },
+          itemCount: list.length,
         ),
       ),
     );
@@ -41,261 +60,365 @@ class _MyAppState extends State<MyApp> with AppCommand {
 
   @override
   void onBassBoost() {
-    print('onBassBoost');
+    setState(() {
+      list.add('${DateTime.now()} : onBassBoost APPCOMMAND_BASS_BOOST');
+    });
   }
 
   @override
   void onBassDown() {
-    print('onBassDown');
+    setState(() {
+      list.add('${DateTime.now()} : onBassDown APPCOMMAND_BASS_DOWN');
+    });
   }
 
   @override
   void onBassUp() {
-    print('onBassUp');
+    setState(() {
+      list.add('${DateTime.now()} : onBassUp APPCOMMAND_BASS_UP');
+    });
   }
 
   @override
   void onBrowserBackward() {
-    print('onBrowserBackward');
+    setState(() {
+      list.add('${DateTime.now()} : onBrowserBackward APPCOMMAND_BROWSER_BACKWARD');
+    });
   }
 
   @override
   void onBrowserFavorites() {
-    print('onBrowserFavorites');
+    setState(() {
+      list.add('${DateTime.now()} : onBrowserFavorites APPCOMMAND_BROWSER_FAVORITES');
+    });
   }
 
   @override
   void onBrowserForward() {
-    print('onBrowserForward');
+    setState(() {
+      list.add('${DateTime.now()} : onBrowserForward APPCOMMAND_BROWSER_FORWARD');
+    });
   }
 
   @override
   void onBrowserHome() {
-    print('onBrowserHome');
+    setState(() {
+      list.add('${DateTime.now()} : onBrowserHome APPCOMMAND_BROWSER_HOME');
+    });
   }
 
   @override
   void onBrowserRefresh() {
-    print('onBrowserRefresh');
+    setState(() {
+      list.add('${DateTime.now()} : onBrowserRefresh APPCOMMAND_BROWSER_REFRESH');
+    });
   }
 
   @override
   void onBrowserSearch() {
-    print('onBrowserSearch');
+    setState(() {
+      list.add('${DateTime.now()} : onBrowserSearch APPCOMMAND_BROWSER_SEARCH');
+    });
   }
 
   @override
   void onBrowserStop() {
-    print('onBrowserStop');
+    setState(() {
+      list.add('${DateTime.now()} : onBrowserStop APPCOMMAND_BROWSER_STOP');
+    });
   }
 
   @override
   void onClose() {
-    print('onClose');
+    setState(() {
+      list.add('${DateTime.now()} : onClose APPCOMMAND_CLOSE');
+    });
   }
 
   @override
   void onCopy() {
-    print('onCopy');
+    setState(() {
+      list.add('${DateTime.now()} : onCopy APPCOMMAND_COPY');
+    });
   }
 
   @override
   void onCorrectionList() {
-    print('onCorrectionList');
+    setState(() {
+      list.add('${DateTime.now()} : onCorrectionList APPCOMMAND_CORRECTION_LIST');
+    });
   }
 
   @override
   void onCut() {
-    print('onCut');
+    setState(() {
+      list.add('${DateTime.now()} : onCut APPCOMMAND_CUT');
+    });
   }
 
   @override
   void onDictateOrCommandControlToggle() {
-    print('onDictateOrCommandControlToggle');
+    setState(() {
+      list.add('${DateTime.now()} : onDictateOrCommandControlToggle APPCOMMAND_DICTATE_OR_COMMAND_CONTROL_TOGGLE');
+    });
   }
 
   @override
   void onFind() {
-    print('onFind');
+    setState(() {
+      list.add('${DateTime.now()} : onFind APPCOMMAND_FIND');
+    });
   }
 
   @override
   void onForwardMail() {
-    print('onForwardMail');
+    setState(() {
+      list.add('${DateTime.now()} : onForwardMail APPCOMMAND_FORWARD_MAIL');
+    });
   }
 
   @override
   void onHelp() {
-    print('onHelp');
+    setState(() {
+      list.add('${DateTime.now()} : onHelp APPCOMMAND_HELP');
+    });
   }
 
   @override
   void onLaunchApp1() {
-    print('onLaunchApp1');
+    setState(() {
+      list.add('${DateTime.now()} : onLaunchApp1 APPCOMMAND_LAUNCH_APP1');
+    });
   }
 
   @override
   void onLaunchApp2() {
-    print('onLaunchApp2');
+    setState(() {
+      list.add('${DateTime.now()} : onLaunchApp2 APPCOMMAND_LAUNCH_APP2');
+    });
   }
 
   @override
   void onLaunchMail() {
-    print('onLaunchMail');
+    setState(() {
+      list.add('${DateTime.now()} : onLaunchMail APPCOMMAND_LAUNCH_MAIL');
+    });
   }
 
   @override
   void onLaunchMediaSelect() {
-    print('onLaunchMediaSelect');
+    setState(() {
+      list.add('${DateTime.now()} : onLaunchMediaSelect APPCOMMAND_LAUNCH_MEDIA_SELECT');
+    });
   }
 
   @override
   void onMediaChannelDown() {
-    print('onMediaChannelDown');
+    setState(() {
+      list.add('${DateTime.now()} : onMediaChannelDown APPCOMMAND_MEDIA_CHANNEL_DOWN');
+    });
   }
 
   @override
   void onMediaChannelUp() {
-    print('onMediaChannelUp');
+    setState(() {
+      list.add('${DateTime.now()} : onMediaChannelUp APPCOMMAND_MEDIA_CHANNEL_UP');
+    });
   }
 
   @override
   void onMediaFastForward() {
-    print('onMediaFastForward');
+    setState(() {
+      list.add('${DateTime.now()} : onMediaFastForward APPCOMMAND_MEDIA_FAST_FORWARD');
+    });
   }
 
   @override
   void onMediaNextTrack() {
-    print('onMediaNextTrack');
+    setState(() {
+      list.add('${DateTime.now()} : onMediaNextTrack APPCOMMAND_MEDIA_NEXTTRACK');
+    });
   }
 
   @override
   void onMediaPause() {
-    print('onMediaPause');
+    setState(() {
+      list.add('${DateTime.now()} : onMediaPause APPCOMMAND_MEDIA_PAUSE');
+    });
   }
 
   @override
   void onMediaPlay() {
-    print('onMediaPlay');
+    setState(() {
+      list.add('${DateTime.now()} : onMediaPlay APPCOMMAND_MEDIA_PLAY');
+    });
   }
 
   @override
   void onMediaPlayPause() {
-    print('onMediaPlayPause');
+    setState(() {
+      list.add('${DateTime.now()} : onMediaPlayPause APPCOMMAND_MEDIA_PLAY_PAUSE');
+    });
   }
 
   @override
   void onMediaPreviousTrack() {
-    print('onMediaPreviousTrack');
+    setState(() {
+      list.add('${DateTime.now()} : onMediaPreviousTrack APPCOMMAND_MEDIA_PREVIOUSTRACK');
+    });
   }
 
   @override
   void onMediaRecord() {
-    print('onMediaRecord');
+    setState(() {
+      list.add('${DateTime.now()} : onMediaRecord APPCOMMAND_MEDIA_RECORD');
+    });
   }
 
   @override
   void onMediaRewind() {
-    print('onMediaRewind');
+    setState(() {
+      list.add('${DateTime.now()} : onMediaRewind APPCOMMAND_MEDIA_REWIND');
+    });
   }
 
   @override
   void onMediaStop() {
-    print('onMediaStop');
+    setState(() {
+      list.add('${DateTime.now()} : onMediaStop APPCOMMAND_MEDIA_STOP');
+    });
   }
 
   @override
   void onMicOnOffToggle() {
-    print('onMicOnOffToggle');
+    setState(() {
+      list.add('${DateTime.now()} : onMicOnOffToggle APPCOMMAND_MIC_ON_OFF_TOGGLE');
+    });
   }
 
   @override
   void onMicrophoneVolumeDown() {
-    print('onMicrophoneVolumeDown');
+    setState(() {
+      list.add('${DateTime.now()} : onMicrophoneVolumeDown APPCOMMAND_MICROPHONE_VOLUME_DOWN');
+    });
   }
 
   @override
   void onMicrophoneVolumeMute() {
-    print('onMicrophoneVolumeMute');
+    setState(() {
+      list.add('${DateTime.now()} : onMicrophoneVolumeMute APPCOMMAND_MICROPHONE_VOLUME_MUTE');
+    });
   }
 
   @override
   void onMicrophoneVolumeUp() {
-    print('onMicrophoneVolumeUp');
+    setState(() {
+      list.add('${DateTime.now()} : onMicrophoneVolumeUp APPCOMMAND_MICROPHONE_VOLUME_UP');
+    });
   }
 
   @override
   void onNew() {
-    print('onNew');
+    setState(() {
+      list.add('${DateTime.now()} : onNew APPCOMMAND_NEW');
+    });
   }
 
   @override
   void onOpen() {
-    print('onOpen');
+    setState(() {
+      list.add('${DateTime.now()} : onOpen APPCOMMAND_OPEN');
+    });
   }
 
   @override
   void onPaste() {
-    print('onPaste');
+    setState(() {
+      list.add('${DateTime.now()} : onPaste APPCOMMAND_PASTE');
+    });
   }
 
   @override
   void onPrint() {
-    print('onPrint');
+    setState(() {
+      list.add('${DateTime.now()} : onPrint APPCOMMAND_PRINT');
+    });
   }
 
   @override
   void onRedo() {
-    print('onRedo');
+    setState(() {
+      list.add('${DateTime.now()} : onRedo APPCOMMAND_REDO');
+    });
   }
 
   @override
   void onReplayToMail() {
-    print('onReplayToMail');
+    setState(() {
+      list.add('${DateTime.now()} : onReplayToMail APPCOMMAND_REPLY_TO_MAIL');
+    });
   }
 
   @override
   void onSave() {
-    print('onSave');
+    setState(() {
+      list.add('${DateTime.now()} : onSave APPCOMMAND_SAVE');
+    });
   }
 
   @override
   void onSendMail() {
-    print('onSendMail');
+    setState(() {
+      list.add('${DateTime.now()} : onSendMail APPCOMMAND_SEND_MAIL');
+    });
   }
 
   @override
   void onSpellCheck() {
-    print('onSpellCheck');
+    setState(() {
+      list.add('${DateTime.now()} : onSpellCheck APPCOMMAND_SPELL_CHECK');
+    });
   }
 
   @override
   void onTrebleDown() {
-    print('onTrebleDown');
+    setState(() {
+      list.add('${DateTime.now()} : onTrebleDown APPCOMMAND_TREBLE_DOWN');
+    });
   }
 
   @override
   void onTrebleUp() {
-    print('onTrebleUp');
+    setState(() {
+      list.add('${DateTime.now()} : onTrebleUp APPCOMMAND_TREBLE_UP');
+    });
   }
 
   @override
   void onUndo() {
-    print('onUndo');
+    setState(() {
+      list.add('${DateTime.now()} : onUndo APPCOMMAND_UNDO');
+    });
   }
 
   @override
   void onVolumeDown() {
-    print('onVolumeDown');
+    setState(() {
+      list.add('${DateTime.now()} : onVolumeDown APPCOMMAND_VOLUME_DOWN');
+    });
   }
 
   @override
   void onVolumeMute() {
-    print('onVolumeMute');
+    setState(() {
+      list.add('${DateTime.now()} : onVolumeMute APPCOMMAND_VOLUME_MUTE');
+    });
   }
 
   @override
   void onVolumeUp() {
-    print('onVolumeUp');
+    setState(() {
+      list.add('${DateTime.now()} : onVolumeUp APPCOMMAND_VOLUME_UP');
+    });
   }
 }

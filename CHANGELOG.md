@@ -1,3 +1,7 @@
+## 0.0.4
+
+* Fixed example.
+
 ## 0.0.3
 
 * Add Shields.io Badge.

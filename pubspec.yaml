@@ -1,6 +1,6 @@
 name: windows_appcommand
 description: "A Flutter plugin that adds WM_APPCOMMAND message functionality for windows."
-version: 0.0.3
+version: 0.0.4
 homepage: https://ynug.dev/
 
 environment:
