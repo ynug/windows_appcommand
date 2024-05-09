@@ -35,6 +35,7 @@ void WindowsAppcommandPlugin::RegisterWithRegistrar(
 
 WindowsAppcommandPlugin::WindowsAppcommandPlugin(
     flutter::PluginRegistrarWindows* registrar)
+        : registrar(registrar)
      {
   window_proc_id = registrar->RegisterTopLevelWindowProcDelegate(
       [this](HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam) {
@@ -42,7 +43,9 @@ WindowsAppcommandPlugin::WindowsAppcommandPlugin(
       });
 }
 
-WindowsAppcommandPlugin::~WindowsAppcommandPlugin() {}
+WindowsAppcommandPlugin::~WindowsAppcommandPlugin() {
+    registrar->UnregisterTopLevelWindowProcDelegate(window_proc_id);
+}
 
 
 void WindowsAppcommandPlugin::_EmitEvent(std::string eventName) {

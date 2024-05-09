@@ -13,7 +13,7 @@ https://learn.microsoft.com/en-us/windows/win32/inputdev/wm-appcommand?redirecte
 
 ```yaml
 dependencies:
-  windows_appcommand: ^0.0.1
+  windows_appcommand: ^0.0.5
 ```
 
 or
