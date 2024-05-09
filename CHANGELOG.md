@@ -1,3 +1,7 @@
+## 0.0.5
+
+* Fixed Unregister was missing.
+
 ## 0.0.4
 
 * Fixed example.

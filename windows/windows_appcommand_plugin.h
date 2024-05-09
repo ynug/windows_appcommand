@@ -21,6 +21,8 @@ class WindowsAppcommandPlugin : public flutter::Plugin {
   WindowsAppcommandPlugin& operator=(const WindowsAppcommandPlugin&) = delete;
 
   private:
+    flutter::PluginRegistrarWindows *registrar;
+
     // The ID of the WindowProc delegate registration.
     int window_proc_id = -1;
 
